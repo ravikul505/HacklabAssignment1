@@ -1,49 +1,17 @@
-body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: bisque;
-}
-
 .App {
     font-family: sans-serif;
+    text-align: center;
 }
 
-.button1 {
-    background-color: #ff0000;
-    /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 12px;
-}
-.button2 {
-    background-color: #00ff08;
-    /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 12px;
-}
-.button3 {
-    background-color: #ffe600;
-    /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 12px;
+#root {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    margin-left: -60px;
+    margin-top: -160px;
+    background-color: #333;
+    width: 120px;
+    height: 320px;
+    border-radius: 30px;
 }
