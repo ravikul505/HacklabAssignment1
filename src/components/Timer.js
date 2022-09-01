@@ -1,26 +1,72 @@
-import * as React from 'react';
-import { render } from 'react-dom';
+import Recat, { useState } from "react"
 
-import './styles.css';
+function Timer() {
 
-function App() {
-    const [counter, setCounter] = React.useState(3);
+    let [counterA, setCounterA] = useState(3);
 
 
-    React.useEffect(() => {
-        counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-    }, [counter]);
-    if (counter == 0) {
-        console.log('a')
-    }
+    // Recat.useEffect(() => {
+    //     function reset() {
+    //         let timer = counterA == 0 && setInterval(() => setCounterA(5), 1000);
+    //         return () => clearInterval(timer);
+    //     }
+    //     let a = reset();
+    //     return a;
+
+    // }, [counterA])
+    const [counterB, setCounterB] = useState(3);
+    // Recat.useEffect(() => {
+
+    //     const timer =
+    //         counterB > 0 && setInterval(() => setCounterB(counterB - 1), 1000);
+
+    //     return () => clearInterval(timer);
+
+    // }, [counterB])
+    const [counterC, setCounterC] = useState(3);
+    // Recat.useEffect(() => {
+
+    //     const timer =
+    //         counterC > 0 && setInterval(() => setCounterC(counterC - 1), 1000);
+
+    //     return () => clearInterval(timer);
+
+    // }, [counterC])
+    Recat.useEffect(() => {
+
+        // const timer =
+        //     counterA > 0 && setInterval(() => setCounterA(counterA - 1), 1000);
+
+        // return () => clearInterval(timer);
+        let timer = null;
+        if (counterA > 0) {
+            timer = setInterval(() => setCounterA(counterA - 1), 1000);
+        } else if (counterB > 0) {
+            timer = setInterval(() => setCounterB(counterB - 1), 1000);
+        } else if (counterC > 0) {
+            timer = setInterval(() => setCounterC(counterC - 1), 1000);
+        }
+        // else if (counterA == 0 && counterB == 0 && counterC == 0) {
+        //     timer = [setInterval(() => setCounterA(3), 1000),
+        //     setInterval(() => setCounterB(4), 1000),
+        //     setInterval(() => setCounterC(5), 1000)]
+        // }
+
+        return () => clearInterval(timer);
+
+    }, [counterA, counterB, counterC]);
+
+
     return (
-        <div className="App">
-            <button type="button" class="button1">Countdown: {counter}</button>
-            <button type="button" class="button2">Countdown: {counter}</button>
-            <button type="button" class="button3">Countdown: {counter}</button>
-        </div>
-    );
+        <article className="w">
+            <button className="x">{counterA}</button>
+            {/* {counterA = 0 ? setCounterA(counterA = 5) : setCounterA(counterA = counterA)} */}
+            <button className="y">{counterB}</button>
+            <button className="z">{counterC}</button>
+
+        </article>
+    )
+
 }
 
-const rootElement = document.getElementById('root');
-render(<App />, rootElement);
+export default Timer;

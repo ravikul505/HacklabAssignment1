@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import TrafficLight from "./components/TrafficLight";
-import TrafficLight from "./components/TrafficLightAutomata";
+import Timer from "./components/Timer";
 
 import "./styles.css";
 
 function App() {
-  return <TrafficLight />;
+  return <Timer />;
 }
 
 const rootElement = document.getElementById("root");
