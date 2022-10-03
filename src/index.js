@@ -1,25 +1,18 @@
 import * as React from 'react';
 import { render } from 'react-dom';
-
+import Red from './components/Red'
+import Yellow from './components/Yellow'
+import Green from './components/Green'
 import './styles.css';
 
 function App() {
-  const [counter, setCounter] = React.useState(3);
+  return (<div className='hello'>
+    <Red />
+    <Green />
+    <Yellow />
 
-
-  React.useEffect(() => {
-    counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-  }, [counter]);
-  if (counter == 0) {
-    console.log('a')
-  }
-  return (
-    <div className="App">
-      <button type="button" class="button1">Countdown: {counter}</button>
-      <button type="button" class="button2">Countdown: {counter}</button>
-      <button type="button" class="button3">Countdown: {counter}</button>
-    </div>
-  );
+  </div >
+  )
 }
 
 const rootElement = document.getElementById('root');
